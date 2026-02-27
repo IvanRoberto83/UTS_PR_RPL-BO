@@ -1,8 +1,8 @@
 package org.uts;
 
 public class TiketVIP extends Tiket implements Scannable {
-    public TiketVIP(String idTiket, double hargaDasar, Film film) {
-        super(idTiket, hargaDasar, film);
+    public TiketVIP(String idTiket, Film film) {
+        super(idTiket, film);
     }
 
     @Override

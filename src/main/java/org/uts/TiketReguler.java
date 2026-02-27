@@ -1,8 +1,8 @@
 package org.uts;
 
 public class TiketReguler extends Tiket implements Scannable {
-    public TiketReguler(String idTiket, double hargaDasar, Film film) {
-        super(idTiket, hargaDasar, film);
+    public TiketReguler(String idTiket, Film film) {
+        super(idTiket, film);
     }
 
     @Override

@@ -7,13 +7,23 @@ public abstract class Tiket {
     private double hargaDasar;
     private Film film;
 
-    public Tiket(String idTiket, double hargaDasar, Film film) {
+    public Tiket(String idTiket, Film film) {
+        this.idTiket = idTiket;
+        this.film = film;
+
+        if(film.getJudul() == "Merah Putih One For All"){
+            this.hargaDasar = 80000;
+        }
+        else if(film.getJudul() == "Demon Slayer: Infinity Castle"){
+            this.hargaDasar = 50000;
+        }
+        else{
+            this.hargaDasar = 55000;
+        }
+
         if (!validasiId(idTiket)) {
             throw new IllegalArgumentException("Format ID tiket tidak valid!");
         }
-        this.idTiket = idTiket;
-        this.hargaDasar = hargaDasar;
-        this.film = film;
     }
 
     public String getIdTiket() {
@@ -24,14 +34,6 @@ public abstract class Tiket {
         return hargaDasar;
     }
 
-    public void setHargaDasar(double hargaDasar) {
-        this.hargaDasar = hargaDasar;
-    }
-
-    public Film getFilm() {
-        return film;
-    }
-
     public String getInfo() {
         return "ID: " + idTiket +
                ", Film: " + film.getJudul() +
@@ -39,9 +41,18 @@ public abstract class Tiket {
     }
 
     public boolean validasiId(String idTiket) {
-        // Format: TKT-YYYY-XXXX
-        String regex = "^TKT-\\d{4}-\\d{4}$";
-        return Pattern.matches(regex, idTiket);
+        if(film.getJudul() == "Merah Putih One For All"){
+            String regex = "^MOFA-\\d{4}-\\d{4}$";
+            return Pattern.matches(regex, idTiket);
+        }
+        else if(film.getJudul() == "Demon Slayer: Infinity Castle"){
+            String regex = "^DSIC-\\d{4}-\\d{4}$";
+            return Pattern.matches(regex, idTiket);
+        }
+        else{
+            String regex = "^SNWH-\\d{4}-\\d{4}$";
+            return Pattern.matches(regex, idTiket);
+        }
     }
 
     public abstract double hitungHarga();
