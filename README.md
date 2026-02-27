@@ -134,7 +134,7 @@ TEST 2 - Invalid ID : 10 <br>
 TEST 3 - Hitung Harga Reguler : 10 <br>
 TEST 4 - Hitung Harga VIP : 10 <br>
 TEST 5 - Interface Scan : 10 <br>
-TEST 6 - Polymorphism & Transaksi : 10 <br>
+TEST 6 - Transaksi : 10 <br>
 TEST 7 - Jumlah Tiket : 10 <br>
 
 <h3> Total Poin : 70</h3>
